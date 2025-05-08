@@ -30,3 +30,5 @@ bin/
 
 .idea
 application.properties
+target
+target/
