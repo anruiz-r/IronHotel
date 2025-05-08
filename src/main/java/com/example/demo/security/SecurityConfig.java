@@ -21,12 +21,12 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
                 .authorizeHttpRequests(auth -> auth
-                    .requestMatchers("/public/**").permitAll()
+                    .requestMatchers("/api/public/**").permitAll()
                     .requestMatchers("/api/auth/**").permitAll()
 
-                    .requestMatchers("/api/admin").hasRole("ROLE_ADMIN")
-                    .requestMatchers("/api/employee").hasRole("ROLE_EMPLOYEE")
-                    .requestMatchers("/api/reservations/{guestId}").hasRole("ROLE_GUEST")
+                    .requestMatchers("/api/admin").hasRole("ADMIN")
+                    .requestMatchers("/api/employee").hasRole("EMPLOYEE")
+                    .requestMatchers("/api/reservations/{guestId}").hasRole("GUEST")
                     .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);

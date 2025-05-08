@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/public")
 public class GuestController {
-   @GetMapping("/hello")
-    public String hello(){
-       return "Hola";
+   @GetMapping("/bienvenido")
+    public String welcome(){
+       return "Hola huesped";
    }
 
 }
