@@ -1,25 +1,18 @@
-package com.example.demo.models;
+package com.example.demo.room.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
-@Table(name = "rooms")
+@Table(name = "standard")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Standard extends Room{
-    @Column
+    @Column(nullable = false)
     private boolean minibar;
 
-    @Column
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    @NotNull
     private EBathroom bathroom ;
-
-
-    public Suite (){
-        super();
-        this.minibar= false;
-    }
 }

@@ -1,46 +1,40 @@
-package com.example.demo.models;
+package com.example.demo.room.models;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "rooms")
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public abstract class Room {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long roomId;
 
-    @Column
-    @NotNull
+    @Column(nullable = false)
     private double price;
 
-    @Column
+    @Column(nullable = false)
     private int capacity;
 
-    @Column
+    @Column(nullable = false)
     private int floor;
 
-    @Column
+    @Column(nullable = false)
     private int roomNumber;
 
-    @Column
+    @Column(nullable = false)
     private boolean available;
 
-    @Column
-    @NotNull
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private ERoomState state;
 
-    @Column
-    @NotNull
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    private EBed bed;
+    private EBed bedType;
 
-    public Room() {
-        this.capacity = 1;
-        this.available = true;
-    }
 }
