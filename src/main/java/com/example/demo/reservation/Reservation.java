@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "reservations")
@@ -16,7 +17,7 @@ import java.time.LocalDate;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long reservationId;
+    private Long reservationId;
 
     @Column(nullable = false )
     private LocalDate arrivalDate;
@@ -44,5 +45,5 @@ public class Reservation {
     private Employee createdByEmployee;
 
     @Column(nullable = false )
-    private LocalDate creationDate;
+    private LocalDateTime creationDate;
 }
