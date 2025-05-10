@@ -12,7 +12,7 @@ import lombok.*;
 public abstract class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long roomId;
+    private Long roomId;
 
     @Column(nullable = false)
     private double price;
@@ -36,5 +36,8 @@ public abstract class Room {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private EBed bedType;
+
+    @OneToMany(mappedBy = "roomReserved", cascade = CascadeType.ALL, orphanRemoval = true) //esto hará que si se elimina una habitacion sus reservas no se queden colgadas y se eliminen tambien
+    private List<Reservation> reservations;
 
 }
