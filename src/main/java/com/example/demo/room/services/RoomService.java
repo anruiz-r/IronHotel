@@ -21,6 +21,10 @@ public class RoomService {
     @Autowired
     private RoomRepository roomRepository;
 
+    public Room createRoom(Room newRoom ){
+        return roomRepository.save(newRoom);
+    }
+
     public Room updateRoom(Long id, Room room ) {
         Room existingRoom = roomRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
         room.setRoomId(existingRoom.getRoomId());
@@ -49,7 +53,4 @@ public class RoomService {
        roomRepository.deleteById(roomId);
     }
 
-    public Room createRoom(Room newRoom ){
-        return roomRepository.save(newRoom);
-    }
 }
