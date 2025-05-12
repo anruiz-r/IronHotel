@@ -8,8 +8,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.util.List;
-
 @Service
 public class StandardService {
     @Autowired
@@ -27,10 +25,6 @@ public class StandardService {
         room.setMinibar(existingRoom.isMinibar());
         room.setBathroom(existingRoom.getBathroom());
         return standardRepository.save(room);
-    }
-
-    public List<Standard> findAll(){
-        return standardRepository.findAll();
     }
 
 

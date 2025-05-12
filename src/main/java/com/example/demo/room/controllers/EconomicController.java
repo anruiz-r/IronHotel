@@ -23,7 +23,7 @@ public class EconomicController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Economic createEconomicRoom(@RequestBody @Valid Economic newRoom) {
+    public Economic createEconomicRoom(@RequestBody @Valid Economic newRoom){
         return (Economic) roomService.createRoom(newRoom);
     }
 
@@ -35,13 +35,13 @@ public class EconomicController {
 
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
-    public List<Economic> findAllEconomicRooms() {
-        return economicService.GetAllEconomicsRooms();
+    public List<Economic> findAllEconomicRooms(){
+      return economicService.GetAllEconomicsRooms();
     }
-
     @GetMapping("/withBreakfastIncluded")
     @ResponseStatus(HttpStatus.OK)
-    public List<Economic> getEconomicRoomsWithBreakfast() {
+
+    public List<Economic> getEconomicRoomsWithBreakfast(){
         return economicService.findByIncludedBreakfastTrue();
     }
 

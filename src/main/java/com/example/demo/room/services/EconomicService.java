@@ -37,8 +37,4 @@ public class EconomicService {
         return economicRepository.save(room);
     }
 
-    public List<Economic>  findAll(){
-        return economicRepository.findAll();
-    }
-
 }
