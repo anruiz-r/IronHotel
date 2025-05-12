@@ -35,15 +35,15 @@ public class Reservation {
 
     @ManyToOne
     @JoinColumn(name = "reservation_room", referencedColumnName = "room_id")
-    private Room roomReserved;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "reservation_guest", referencedColumnName = "guest_id")
-//    private Guest reservedByGuest;
-//
-//    @ManyToOne
-//    @JoinColumn(name = "reservation_employee", referencedColumnName = "employee_id")
-//    private Employee createdByEmployee;
+    private Room room;
+
+    @ManyToOne
+    @JoinColumn(name = "reservation_guest", referencedColumnName = "id")
+    private Guest reservedBy;
+
+    @ManyToOne
+    @JoinColumn(name = "reservation_employee", referencedColumnName = "id")
+    private Employee createdBy;
 
     @Column(name = "creation_date", nullable = false )
     private LocalDateTime creationDate;

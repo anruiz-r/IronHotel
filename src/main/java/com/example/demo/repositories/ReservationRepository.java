@@ -19,6 +19,6 @@ public interface ReservationRepository extends JpaRepository<Reservation, Long> 
     List<Reservation> findByCreationDate(LocalDateTime creationDate);
 //    List<Reservation> findByCreatedByEmployee(Employee createdByEmployee);
 //    List<Reservation> findByReservedByGuest(Guest reservedByGuest);
-    List<Reservation> findByRoomReserved(Room roomReserved);
+    List<Reservation> findByRoom(Room room);
     List<Reservation> findByReservationState(EReservationState state);
 }

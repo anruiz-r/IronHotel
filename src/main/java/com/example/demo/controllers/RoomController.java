@@ -16,18 +16,6 @@ public class RoomController {
     @Autowired
     private RoomService roomService;
 
-//    @PostMapping
-//    @ResponseStatus(HttpStatus.CREATED)
-//    public Room createRoom(@RequestBody Room newRoom){
-//        return roomService.createRoom(newRoom);
-//    }
-
-//    @PutMapping("/{id}")
-//    @ResponseStatus(HttpStatus.OK)
-//    public Room updateRoom(@PathVariable Long roomId, @RequestBody @Valid Room room) {
-//        return roomService.updateRoom(roomId, room);
-//    }
-
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Room> findAllRooms(){

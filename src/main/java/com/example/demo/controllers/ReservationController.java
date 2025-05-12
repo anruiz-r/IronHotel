@@ -35,7 +35,7 @@ public class ReservationController {
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation createReservation(@RequestBody @Valid Reservation newReservation) {
 
-        boolean isAvailable= reservationService.isRoomAvailable(newReservation.getRoomReserved(), newReservation.getArrivalDate(), newReservation.getDepartureDate());
+        boolean isAvailable= reservationService.isRoomAvailable(newReservation.getRoom(), newReservation.getArrivalDate(), newReservation.getDepartureDate());
         if (!isAvailable) {
                 throw new ResponseStatusException(HttpStatus.NOT_ACCEPTABLE, "No rooms available in selected dates");
             }

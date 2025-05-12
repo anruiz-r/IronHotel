@@ -42,7 +42,7 @@ public class ReservationService {
     }
 
     public List<Reservation> findReservationsByRoom(Room room) {
-        return reservationRepository.findByRoomReserved(room);
+        return reservationRepository.findByRoom(room);
     }
 
 //    public List<Reservation> findReservationsByGuest(Guest guest) {
@@ -83,7 +83,7 @@ public class ReservationService {
 
 
     public boolean isRoomAvailable(Room room, LocalDate arrivalDate, LocalDate departureDate) {
-        List<Reservation> reservations = reservationRepository.findByRoomReserved(room);
+        List<Reservation> reservations = reservationRepository.findByRoom(room);
 
         for (Reservation eachRes : reservations) {
             if (arrivalDate.isBefore(eachRes.getDepartureDate()) && departureDate.isAfter(eachRes.getArrivalDate())) {
