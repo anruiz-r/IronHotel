@@ -1,4 +1,4 @@
-package com.example.demo.services;
+package com.example.demo.users.services;
 
 
 import com.auth0.jwt.JWT;

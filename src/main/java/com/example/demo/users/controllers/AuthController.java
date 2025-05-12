@@ -1,9 +1,9 @@
-package com.example.demo.controllers;
+package com.example.demo.users.controllers;
 
-import com.example.demo.dtos.AuthResponseDto;
-import com.example.demo.models.User;
-import com.example.demo.services.JwtService;
-import com.example.demo.services.UserService;
+import com.example.demo.users.dtos.AuthResponseDto;
+import com.example.demo.users.models.User;
+import com.example.demo.users.services.JwtService;
+import com.example.demo.users.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
