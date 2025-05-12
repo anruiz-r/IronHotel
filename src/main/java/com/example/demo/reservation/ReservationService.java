@@ -1,7 +1,7 @@
 package com.example.demo.reservation;
 
 import com.example.demo.room.models.Room;
-import com.example.demo.users.models.Guest;
+import com.example.demo.models.Guest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

@@ -1,8 +1,7 @@
 package com.example.demo.reservation;
 
-import com.example.demo.room.models.Room;
 import com.example.demo.room.services.RoomService;
-import com.example.demo.users.models.Guest;
+import com.example.demo.models.Guest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -11,7 +10,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/reservations")

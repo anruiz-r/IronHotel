@@ -1,8 +1,8 @@
 package com.example.demo.reservation;
 
 import com.example.demo.room.models.Room;
-import com.example.demo.users.models.Employee;
-import com.example.demo.users.models.Guest;
+import com.example.demo.models.Employee;
+import com.example.demo.models.Guest;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

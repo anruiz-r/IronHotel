@@ -1,4 +1,4 @@
-package com.example.demo.users.models;
+package com.example.demo.models;
 
 public enum ERole {
     GUEST,
