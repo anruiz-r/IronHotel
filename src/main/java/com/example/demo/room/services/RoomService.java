@@ -1,0 +1,55 @@
+package com.example.demo.room.services;
+
+import com.example.demo.room.models.EBed;
+import com.example.demo.room.models.Room;
+import com.example.demo.room.repositories.RoomRepository;
+import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.server.ResponseStatusException;
+
+import java.util.List;
+
+@Service
+public class RoomService {
+
+    @Autowired
+    private RoomRepository roomRepository;
+
+    public Room updateRoom(Long id, Room room ) {
+        Room existingRoom = roomRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+        room.setRoomId(existingRoom.getRoomId());
+        room.setRoomNumber(existingRoom.getRoomNumber());
+        room.setAvailable(existingRoom.isAvailable());
+        room.setPrice(existingRoom.getPrice());
+        room.setFloor(existingRoom.getFloor());
+        room.setCapacity(existingRoom.getCapacity());
+        room.setState(existingRoom.getState());
+        return roomRepository.save(room);
+    }
+
+    public List<Room>  getRoomsByBedType(EBed bedType){
+        return roomRepository.findByBedType(bedType);
+    }
+
+    public List<Room> findByAvailableTrue(){
+        return roomRepository.findByAvailableTrue();
+    }
+
+    public List<Room>  findAll(){
+        return roomRepository.findAll();
+    }
+
+    public void deleteById(Long roomId){
+       roomRepository.deleteById(roomId);
+    }
+
+    public Room createRoom(Room newRoom ){
+        return roomRepository.save(newRoom);
+    }
+}
