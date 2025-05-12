@@ -4,5 +4,5 @@ public enum EBed {
     INDIVIDUAL,
     TWINS,
     DOUBLE,
-    KINGSIZE
+    KING
 }

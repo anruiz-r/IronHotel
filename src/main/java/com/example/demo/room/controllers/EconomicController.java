@@ -45,6 +45,4 @@ public class EconomicController {
         return economicService.findByIncludedBreakfastTrue();
     }
 
-
-
 }
