@@ -1,7 +1,7 @@
-package com.example.demo.repositories;
+package com.example.demo.users.repositories;
 
-import com.example.demo.models.ERole;
-import com.example.demo.models.Role;
+import com.example.demo.users.models.ERole;
+import com.example.demo.users.models.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

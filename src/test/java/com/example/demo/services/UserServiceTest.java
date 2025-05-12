@@ -1,7 +1,8 @@
 package com.example.demo.services;
 
-import com.example.demo.models.User;
-import com.example.demo.repositories.UserRepository;
+import com.example.demo.users.models.User;
+import com.example.demo.users.repositories.UserRepository;
+import com.example.demo.users.services.UserService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
