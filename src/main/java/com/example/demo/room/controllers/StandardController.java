@@ -11,8 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("api/rooms/standards")
+@RequestMapping("api/public/rooms/standards")
 public class StandardController {
     @Autowired
     private StandardService standardService;
@@ -26,9 +28,16 @@ public class StandardController {
         return (Standard) roomService.createRoom(newRoom);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{roomId}")
     @ResponseStatus(HttpStatus.OK)
     public Standard updateStandardRoom(@PathVariable Long roomId, @RequestBody @Valid Standard room) {
         return standardService.updateStandardRoom(roomId, room);
     }
+
+    @GetMapping
+    @ResponseStatus(HttpStatus.OK)
+    public List<Standard> findAllRooms(){
+        return standardService.findAll();
+    }
+
 }
