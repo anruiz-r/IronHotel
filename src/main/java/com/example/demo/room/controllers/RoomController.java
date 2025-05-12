@@ -47,11 +47,10 @@ public class RoomController {
         return roomService.findByAvailableTrue();
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{roomId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteRoom(Long roomId){
         roomService.deleteById(roomId);
     }
-
 
 }

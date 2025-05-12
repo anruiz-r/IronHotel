@@ -27,7 +27,7 @@ public class EconomicController {
         return (Economic) roomService.createRoom(newRoom);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{roomId}")
     @ResponseStatus(HttpStatus.OK)
     public Room updateEconomicRoom(@PathVariable Long roomId, @RequestBody @Valid Economic room) {
         return economicService.updateEconomicRoom(roomId, room);
