@@ -1,7 +1,10 @@
 package com.example.demo.room.models;
 
+import com.example.demo.reservation.Reservation;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -38,7 +41,7 @@ public abstract class Room {
     @Enumerated(EnumType.STRING)
     private EBed bedType;
 
-//    @OneToMany(mappedBy = "roomReserved", cascade = CascadeType.ALL, orphanRemoval = true) //esto hará que si se elimina una habitacion sus reservas no se queden colgadas y se eliminen tambien
-//    private List<Reservation> reservations;
+    @OneToMany(mappedBy = "roomReserved", cascade = CascadeType.ALL, orphanRemoval = true) //esto hará que si se elimina una habitacion sus reservas no se queden colgadas y se eliminen tambien
+    private List<Reservation> reservations;
 
 }
