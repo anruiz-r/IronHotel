@@ -53,4 +53,6 @@ public class AuthController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("User not found");
         }
     }
+
+
 }

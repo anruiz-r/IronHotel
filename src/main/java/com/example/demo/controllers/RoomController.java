@@ -22,7 +22,7 @@ public class RoomController {
         return roomService.findAll();
     }
 
-    @GetMapping("bed-type/{bedType}")
+    @GetMapping("/bed-type/{bedType}")
     @ResponseStatus(HttpStatus.OK)
     public List<Room> getByBedType(@PathVariable EBed bedType) {
         return roomService.getRoomsByBedType(bedType);

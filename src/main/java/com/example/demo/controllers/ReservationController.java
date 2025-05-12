@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
-@RequestMapping("/reservations")
+@RequestMapping("api/public/reservations")
 public class ReservationController {
     @Autowired
     ReservationService reservationService;
@@ -48,15 +48,15 @@ public class ReservationController {
         return reservationService.modifyReservation(reservationId, reservationDTO);
     }
 
-    @PatchMapping
+    @PatchMapping("/cancel/{id}")
     @ResponseStatus(HttpStatus.OK)
-    public void cancelReservation(Long reservationId) {
+    public void cancelReservation(@PathVariable Long reservationId) {
         reservationService.cancelReservation(reservationId);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteReservation(Long reservationId) {
+    public void deleteReservation(@PathVariable Long reservationId) {
         reservationService.deleteReservation(reservationId);
     }
 
