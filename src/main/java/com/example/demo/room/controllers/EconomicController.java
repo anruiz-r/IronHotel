@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/rooms/economics")
+@RequestMapping("api/public/rooms/economics")
 public class EconomicController {
     @Autowired
     private EconomicService economicService;
@@ -23,7 +23,7 @@ public class EconomicController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Economic createEconomicRoom(@RequestBody Economic newRoom){
+    public Economic createEconomicRoom(@RequestBody @Valid Economic newRoom){
         return (Economic) roomService.createRoom(newRoom);
     }
 

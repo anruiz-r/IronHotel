@@ -10,6 +10,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class Room {
+    @Column(name = "room-id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long roomId;
@@ -23,7 +24,7 @@ public abstract class Room {
     @Column(nullable = false)
     private int floor;
 
-    @Column(nullable = false)
+    @Column(name = "room-number", nullable = false, unique = true)
     private int roomNumber;
 
     @Column(nullable = false)
@@ -33,7 +34,7 @@ public abstract class Room {
     @Enumerated(EnumType.STRING)
     private ERoomState state;
 
-    @Column(nullable = false)
+    @Column(name = "bed-type", nullable = false)
     @Enumerated(EnumType.STRING)
     private EBed bedType;
 
