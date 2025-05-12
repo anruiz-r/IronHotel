@@ -1,5 +1,7 @@
-package com.example.demo.models;
+package com.example.demo.users.models;
 
+import com.example.demo.reservation.Reservation;
+import com.example.demo.users.models.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,8 +14,12 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Guest extends User{
+public class Guest extends User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long guestId;
+
     @Column(name = "reservations")
-    @OneToMany(mappedBy = "reserved_by", cascade = CascadeType.ALL, orphanRemoval = true
+    @OneToMany(mappedBy = "reserved_by", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Reservation> reservations;
 }

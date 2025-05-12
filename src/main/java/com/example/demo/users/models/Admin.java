@@ -1,7 +1,7 @@
-package com.example.demo.models;
+package com.example.demo.users.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import com.example.demo.users.models.User;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -12,4 +12,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Admin extends User {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long adminId;
 }

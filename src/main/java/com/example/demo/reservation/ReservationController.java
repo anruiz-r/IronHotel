@@ -2,6 +2,7 @@ package com.example.demo.reservation;
 
 import com.example.demo.room.models.Room;
 import com.example.demo.room.services.RoomService;
+import com.example.demo.users.models.Guest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

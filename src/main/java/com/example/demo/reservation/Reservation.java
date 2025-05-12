@@ -1,6 +1,9 @@
 package com.example.demo.reservation;
 
 import com.example.demo.room.models.Room;
+import com.example.demo.users.models.Guest;
+import com.example.demo.users.models.Employee;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
