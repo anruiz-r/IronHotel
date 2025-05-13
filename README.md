@@ -23,4 +23,4 @@ Aquí se encuentra el diagrama UML con las clases principales del proyecto (`Roo
 ```sh
 git clone https://github.com/tu-usuario/IronHotel.git
 
-
+https://www.canva.com/design/DAGnU3G9gAk/xpXPNnJSJ6cQ8cX80CXaEw/edit?utm_content=DAGnU3G9gAk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
