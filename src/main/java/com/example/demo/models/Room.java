@@ -1,5 +1,6 @@
 package com.example.demo.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public abstract class Room {
+public class Room {
     @Column(name = "room_id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,6 +42,7 @@ public abstract class Room {
     private EBed bedType;
 
     @OneToMany(mappedBy = "room", cascade = CascadeType.ALL, orphanRemoval = true) //esto hará que si se elimina una habitacion sus reservas no se queden colgadas y se eliminen tambien
+    @JsonBackReference
     private List<Reservation> reservations;
 
 }

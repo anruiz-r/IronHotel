@@ -2,6 +2,7 @@ package com.example.demo.services;
 
 import com.example.demo.dtos.ReservationPatchDTO;
 import com.example.demo.models.EReservationState;
+import com.example.demo.models.Economic;
 import com.example.demo.models.Reservation;
 import com.example.demo.models.Room;
 import com.example.demo.repositories.ReservationRepository;
