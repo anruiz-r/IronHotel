@@ -3,12 +3,12 @@
 
 ## **📌 Descripción del Proyecto**
 
-IronHotel es una aplicación web diseñada para la **gestión de reservas hoteleras**. Permite a los huéspedes reservar habitaciones, a los empleados administrar reservas, y a los administradores gestionar los usuarios del sistema.
+IronHotel es una aplicación web diseñada para la **gestión de reservas hoteleras** de forma simplificada para la presentación del proyecto 1 del curso JAVA BACKEND de IRONHACK y OPENBANK. Esta aplicación permite a los huéspedes reservar habitaciones, a los empleados administrar reservas, y a los administradores gestionar los usuarios del sistema.
 ---
 
 ## 📚 Class Diagram
 
-![Class Diagram](ruta/a/diagrama.png) <!-- Reemplaza con la URL o ruta correcta si la tienes -->
+![Class Diagram](src/main/resources/images/image.png)
 
 ---
 
@@ -32,7 +32,7 @@ spring.jpa.database-platform=org.hibernate.dialect.MySQLDialect
 server.port=8080
 
 ```
-3. Ejecuta la aplicación:
+3. Ejecuta la aplicación con tu IDE preferido o cualquier otro método de tu elección.
 
 ---
 
@@ -53,33 +53,33 @@ server.port=8080
 
 ## 🧭 Controllers and Routes Structure
 
-| Method | Endpoint                         | Description                          |
-|--------|----------------------------------|--------------------------------------|
-| GET    | `/api/public/reservations`      | Listar todas las reservas            |
-| GET    | `/api/public/reservations/{id}` | Obtener una reserva por ID          |
-| POST   | `/api/public/reservations`      | Crear una nueva reserva             |
-| PUT    | `/api/public/reservations/{id}` | Actualizar una reserva existente    |
-| DELETE | `/api/public/reservations/{id}` | Eliminar una reserva por ID         |
-| GET    | `/api/public/rooms`             | Listar habitaciones                 |
-| GET    | `/api/public/users`             | Listar usuarios                     |
+| Method | Endpoint                        | Description                      |
+|--------|---------------------------------|----------------------------------|
+| GET    | `/api/public/reservations`      | Listar todas las reservas        |
+| GET    | `/api/public/reservations/{id}` | Obtener una reserva por ID       |
+| POST   | `/api/public/reservations`      | Crear una nueva reserva          |
+| PUT    | `/api/public/reservations/{id}` | Actualizar una reserva existente |
+| DELETE | `/api/public/reservations/{id}` | Eliminar una reserva por ID      |
+| GET    | `/api/public/rooms`             | Listar habitaciones              |
+| GET    | `/api/public/users`             | Listar usuarios                  |
+|POST    | `/api/public/users`             | Crear usuarios                   |     
 
 ---
 
 ## 🔗 Extra Links
 
 - 📌 [Trello Board](https://trello.com/b/CBEI8Qc5/project1)
-- 🎤 [Presentation Slides](https://slides.com)
+- 🎤 [Presentation Slides](https://www.canva.com/design/DAGnU3G9gAk/xpXPNnJSJ6cQ8cX80CXaEw/edit?utm_content=DAGnU3G9gAk&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 - 📫 [Postman Collection](https://craftshop.postman.co/workspace/My-Workspace~64247626-9b1b-40cf-82e4-df164e396f63/collection/39061244-5ccde0dc-49f7-424a-a40d-19eb2b697f9b?action=share&creator=39061244)
 
 ---
 
 ## 🔮 Future Work
 
-- Añadir Spring Security con JWT y roles (admin, user)
+- Implementar correctamente Spring Security con JWT y roles (admin, user) ya que ahora no termina de funcionar.
 - Validaciones más robustas (por ejemplo, que `arrivalDate < departureDate`)
-- Implementar paginación y búsqueda por filtros (por usuario, fecha, habitación…)
-- Añadir Swagger para documentación interactiva
-- Posible integración con servicio de pagos o pasarela de check-in
+- Posible integración de entidades de pago
+- Hacer posible la funcionalidad de check-in /check-out
 
 ---
 
@@ -94,5 +94,4 @@ server.port=8080
 
 ## 👥 Team Members
 
-- 👩‍💻 Nombre Apellido – Backend Developer – [@githubUser](https://github.com/githubUser)
-- 👨‍💻 Nombre Apellido – Project Manager – [@githubUser2](https://github.com/githubUser2)
+- 👩‍💻 Ángela Ruiz Rodríguez– Full Stack Developer – [@githubUser](https://github.com/anruiz-r)
