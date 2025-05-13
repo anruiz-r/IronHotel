@@ -42,19 +42,19 @@ public class ReservationController {
             return reservationService.createReservation(newReservation);
     }
 
-    @PatchMapping("/{id}")
+    @PatchMapping("/{reservationId}")
     @ResponseStatus(HttpStatus.OK)
     public Reservation modifyReservation(@PathVariable Long reservationId, @RequestBody ReservationPatchDTO reservationDTO) {
         return reservationService.modifyReservation(reservationId, reservationDTO);
     }
 
-    @PatchMapping("/cancel/{id}")
+    @PatchMapping("/cancel/{reservationId}")
     @ResponseStatus(HttpStatus.OK)
     public void cancelReservation(@PathVariable Long reservationId) {
         reservationService.cancelReservation(reservationId);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{reservationId}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteReservation(@PathVariable Long reservationId) {
         reservationService.deleteReservation(reservationId);
@@ -66,19 +66,19 @@ public class ReservationController {
         return reservationService.getAllReservations();
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{reservationId}")
     @ResponseStatus(HttpStatus.OK)
     public Reservation findReservationById(@PathVariable Long reservationId){
         return reservationService.getReservationById(reservationId);
     }
 
-    @GetMapping("/arrival/{date}")
+    @GetMapping("/arrival/{arrivalDate}")
     @ResponseStatus(HttpStatus.OK)
     public List<Reservation> getReservationsByArrivalDate(@PathVariable LocalDate arrivalDate) {
         return reservationService.findReservationsByArrivalDate(arrivalDate);
     }
 
-    @GetMapping("/departure/{date}")
+    @GetMapping("/departure/{departureDate}")
     @ResponseStatus(HttpStatus.OK)
     public List<Reservation> getReservationsByDepartureDate(@PathVariable LocalDate departureDate) {
         return reservationService.findReservationsByDepartureDate(departureDate);
