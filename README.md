@@ -10,6 +10,7 @@ IronHotel es una aplicación web diseñada para la **gestión de reservas hotele
 
 ![Class Diagram](src/main/resources/images/image.png)
 
+
 ---
 
 ## ⚙️ Setup
@@ -53,16 +54,46 @@ server.port=8080
 
 ## 🧭 Controllers and Routes Structure
 
-| Method | Endpoint                        | Description                      |
-|--------|---------------------------------|----------------------------------|
-| GET    | `/api/public/reservations`      | Listar todas las reservas        |
-| GET    | `/api/public/reservations/{id}` | Obtener una reserva por ID       |
-| POST   | `/api/public/reservations`      | Crear una nueva reserva          |
-| PUT    | `/api/public/reservations/{id}` | Actualizar una reserva existente |
-| DELETE | `/api/public/reservations/{id}` | Eliminar una reserva por ID      |
-| GET    | `/api/public/rooms`             | Listar habitaciones              |
-| GET    | `/api/public/users`             | Listar usuarios                  |
-|POST    | `/api/public/users`             | Crear usuarios                   |     
+| Method                 | Endpoint                                             | Description                                          |
+| ---------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| **AUTH**               |                                                      |                                                      |
+| POST                   | `/api/public/auth/login`                             | Iniciar sesión                                       |
+| POST                   | `/api/public/auth/signup`                            | Crear nuevo usuario                                  |
+| GET                    | `/api/public/auth`                                   | Listar todos los usuarios                            |
+| DELETE                 | `/api/public/auth/{id}`                              | Eliminar usuario por ID                              |
+| **ROOMS - ECONOMIC**   |                                                      |                                                      |
+| POST                   | `/api/public/rooms/economics`                        | Crear habitación económica                           |
+| PUT                    | `/api/public/rooms/economics/{roomId}`               | Actualizar habitación económica por ID               |
+| GET                    | `/api/public/rooms/economics`                        | Listar todas las habitaciones económicas             |
+| GET                    | `/api/public/rooms/economics/withBreakfastIncluded`  | Listar habitaciones económicas con desayuno incluido |
+| **ROOMS - STANDARD**   |                                                      |                                                      |
+| POST                   | `/api/public/rooms/standards`                        | Crear habitación estándar                            |
+| PUT                    | `/api/public/rooms/standards/{roomId}`               | Actualizar habitación estándar                       |
+| GET                    | `/api/public/rooms/standards`                        | Listar todas las habitaciones estándar               |
+| **ROOMS - SUITE**      |                                                      |                                                      |
+| POST                   | `/api/public/rooms/suites`                           | Crear habitación suite                               |
+| PUT                    | `/api/public/rooms/suites/{roomId}`                  | Actualizar habitación suite                          |
+| GET                    | `/api/public/rooms/suites`                           | Listar todas las habitaciones suite                  |
+| **ROOMS - GENERAL**    |                                                      |                                                      |
+| GET                    | `/api/public/rooms`                                  | Listar todas las habitaciones                        |
+| GET                    | `/api/public/rooms/bed-type/{bedType}`               | Buscar habitaciones por tipo de cama                 |
+| GET                    | `/api/public/rooms/available-rooms`                  | Listar habitaciones disponibles                      |
+| DELETE                 | `/api/public/rooms/{roomId}`                         | Eliminar habitación por ID                           |
+| **EMPLOYEES & GUESTS** |                                                      |                                                      |
+| POST                   | `/api/public/employees`                              | Crear empleado                                       |
+| POST                   | `/api/public/guests`                                 | Crear huésped                                        |
+| **RESERVATIONS**       |                                                      |                                                      |
+| POST                   | `/api/public/reservations`                           | Crear reserva (solo si hay disponibilidad)           |
+| PATCH                  | `/api/public/reservations/{reservationId}`           | Modificar una reserva                                |
+| PATCH                  | `/api/public/reservations/cancel/{reservationId}`    | Cancelar una reserva                                 |
+| DELETE                 | `/api/public/reservations/{reservationId}`           | Eliminar una reserva                                 |
+| GET                    | `/api/public/reservations`                           | Listar todas las reservas                            |
+| GET                    | `/api/public/reservations/{reservationId}`           | Obtener una reserva por ID                           |
+| GET                    | `/api/public/reservations/arrival/{arrivalDate}`     | Buscar reservas por fecha de llegada                 |
+| GET                    | `/api/public/reservations/departure/{departureDate}` | Buscar reservas por fecha de salida                  |
+| GET                    | `/api/public/reservations/{state}`                   | Buscar reservas por estado                           |
+| **OTHERS**             |                                                      |                                                      |
+| GET                    | `/api/public/hello`                                  | Ruta de prueba (respuesta: "Hola postman")           |
 
 ---
 
@@ -76,8 +107,9 @@ server.port=8080
 
 ## 🔮 Future Work
 
-- Implementar correctamente Spring Security con JWT y roles (admin, user) ya que ahora no termina de funcionar.
-- Validaciones más robustas (por ejemplo, que `arrivalDate < departureDate`)
+Posibles mejoras que podrían llevarse a cabo con más tiempo:
+- Implementar correctamente Spring Security con JWT y roles (admin, user), ya que ahora no termina de funcionar.
+- Validaciones más robustas (por ejemplo, que `arrivalDate < departureDate`) y excepciones personalizadas.
 - Posible integración de entidades de pago
 - Hacer posible la funcionalidad de check-in /check-out
 
