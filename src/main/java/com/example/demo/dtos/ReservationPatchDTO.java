@@ -17,6 +17,7 @@ public class ReservationPatchDTO {
     private LocalDate arrivalDate;
     private LocalDate departureDate;
 
+
     @Enumerated(EnumType.STRING)
     private EReservationState ReservationState;
 
